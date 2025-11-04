@@ -10,10 +10,10 @@ const App = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(name,age)
+    console.log(fields)
   }
   const handleRemove = () => {
-    
+
   }
   const handleAdd = () => {
 
