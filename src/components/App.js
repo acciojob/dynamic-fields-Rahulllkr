@@ -16,6 +16,13 @@ const App = () => {
     setFields(updated)
   }
 
+  const handleRemove = (index) => {
+    const updated = fields.filter((item,i) => {
+      return i !== index;
+    })
+    setFields(updated)
+  }
+
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -31,7 +38,7 @@ const App = () => {
               <div>
                 <input type="text" placeholder="Name" value={item.name} onChange={(e) => handleChange(index,e)}/>
                 <input type="number" placeholder="Age" value={item.age} onChange={(e) => handleChange(index,e)}/>
-                <button type="button">Remove</button>
+                <button type="button" onClick={() => handleRemove(index)}>Remove</button>
               </div>
             })
           }
