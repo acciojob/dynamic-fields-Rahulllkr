@@ -34,10 +34,10 @@ const App = () => {
   return (
     <div>
         {/* Do not remove the main div */}
-        <form onClick={handleSubmit}>
+        <form onSubmit={handleSubmit}>
           {
             fields.map((item,index) => {
-              <div key={index} style={{margin:"20px"}}>
+               return <div key={index} style={{margin:"20px"}}>
                 <input name="name" type="text" placeholder="Name" value={item.name} onChange={(e) => handleChange(index,e)}/>
                 <input name="age" type="number" placeholder="Age" value={item.age} onChange={(e) => handleChange(index,e)}/>
                 <button type="button" onClick={() => handleRemove(index)}>Remove</button>
