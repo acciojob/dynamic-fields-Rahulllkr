@@ -1,7 +1,6 @@
 
 import React, { useState } from "react";
 import './../styles/App.css';
-import { flatten } from "cypress/types/lodash";
 
 const App = () => {
 
@@ -38,9 +37,9 @@ const App = () => {
         <form onClick={handleSubmit}>
           {
             fields.map((item,index) => {
-              <div>
-                <input type="text" placeholder="Name" value={item.name} onChange={(e) => handleChange(index,e)}/>
-                <input type="number" placeholder="Age" value={item.age} onChange={(e) => handleChange(index,e)}/>
+              <div key={index} style={{margin:"20px"}}>
+                <input name="name" type="text" placeholder="Name" value={item.name} onChange={(e) => handleChange(index,e)}/>
+                <input name="age" type="number" placeholder="Age" value={item.age} onChange={(e) => handleChange(index,e)}/>
                 <button type="button" onClick={() => handleRemove(index)}>Remove</button>
               </div>
             })
