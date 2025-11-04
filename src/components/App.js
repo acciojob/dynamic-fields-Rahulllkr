@@ -23,6 +23,10 @@ const App = () => {
     setFields(updated)
   }
 
+  const handleAdd = () => {
+    setFields([...fields,{name:"",age:""}]);
+  }
+
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -31,7 +35,6 @@ const App = () => {
   return (
     <div>
         {/* Do not remove the main div */}
-        <div>
         <form onClick={handleSubmit}>
           {
             fields.map((item,index) => {
@@ -42,10 +45,9 @@ const App = () => {
               </div>
             })
           }
+          <button type="button" onClick={handleAdd}>Add More</button>
+          <button type="submit" onClick={handleSubmit}>Submit</button>
         </form>
-        </div>
-          <button onClick={handleAdd}>Add More</button>
-          <button onClick={handleSubmit}>Submit</button>
         
     </div>
   )
